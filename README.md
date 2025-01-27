@@ -63,7 +63,8 @@ mv $HOME/privasea/config/UTC--* $HOME/privasea/config/wallet_keystore
 
 ✨ Lanjut: https://deepsea-beta.privasea.ai/privanetixNode > create new > isi nama node & fill address yang tadi di generate > stake TPRAI 
 #
-
+- kalo error stake coba stakenya lewat OKX Web3 Wallet, kalo masih error berarti down.
+#
 ✨ Balik lagi ke Terminal, run ini
 
 ```
@@ -74,6 +75,11 @@ KEYSTORE_PASSWORD=password-ente && docker run -d --name privanetix-node -v "$HOM
 #
 Done, refresh web sekarang status udah online
 
+#
+- kalo masih belum online restart dulu dockernya
+```
+docker restart privanetix-node
+```
 #
 #
 ✨ Check logs:
