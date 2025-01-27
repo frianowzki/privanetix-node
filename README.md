@@ -1,6 +1,6 @@
 
 
-# Privasea Privanetix Node (Incentivized)
+# Privanetix DeepSea Genesis by Privasea Node (Incentivized)
 
 - Minimum System Requirements
 
