@@ -29,7 +29,7 @@ sudo groupadd docker && sudo usermod -aG docker $(whoami) && newgrp docker
 ✨ Pull Privasea Docker Image
 
 ```
-docker pull privasea/acceleration-node-beta:latest
+docker pull privasea/acceleration-node-beta
 ```
 
 ✨ Create Privasea folder
@@ -47,11 +47,14 @@ docker run --rm -it -v "$HOME/privasea/config:/app/config" privasea/acceleration
 - set password dan diingat buat akses kita nanti dan copy address yang barusan di generate.
 
 ✨ Pindah keystore ke folder baru (backup juga sekalian)
-
 ```
-mv $HOME/privasea/config/UTC--* $HOME/privasea/config/wallet_keystore
+cd /privasea/config && ls
 ```
-
+```
+mv ./UTC--2025-01-06T06-11-07.485797065Z--f07c3ef23ae7beb8cd8ba5ff546e35fd4b332b34  ./wallet_keystore
+```
+(ganti ```UTC--2025-01-06T06-11-07.485797065Z--f07c3ef23ae7beb8cd8ba5ff546e35fd4b332b34``` pake punya ente sendiri)
+#
 ✨ Lanjut ke: https://deepsea-beta.privasea.ai/privanetixNode
 #
 
@@ -68,10 +71,12 @@ mv $HOME/privasea/config/UTC--* $HOME/privasea/config/wallet_keystore
 ✨ Balik lagi ke Terminal, run ini
 
 ```
-KEYSTORE_PASSWORD=password-ente && docker run -d --name privanetix-node -v "$HOME/privasea/config:/app/config" -e KEYSTORE_PASSWORD=$KEYSTORE_PASSWORD privasea/acceleration-node-beta:latest
+docker run  -d   -v "/privasea/config:/app/config" \
+  -e KEYSTORE_PASSWORD=password-ente \
+  privasea/acceleration-node-beta:latest
 ```
 
-- ganti password-ente pake password yang tadi dibikin.
+- ganti ```password-ente``` pake password yang tadi dibikin.
 #
 Done, refresh web sekarang status udah online
 
@@ -105,7 +110,7 @@ friodrops
 ```
 Node ID: 
 ```
-304
+877
 ```
 #
 More info dimari: 
